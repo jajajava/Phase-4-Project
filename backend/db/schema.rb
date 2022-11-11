@@ -15,7 +15,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_183421) do
     t.string "name"
     t.string "date"
     t.string "time"
-    t.integer "rsvp_limit"
     t.boolean "is_public"
     t.string "recurring_days"
     t.datetime "created_at", null: false

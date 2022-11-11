@@ -11,14 +11,14 @@ class EventsController < ApplicationController
 
     def create
         event = Event.create!(priv_params)
-        render json: {event}, status: :created
+        render json: event, status: :created
     end
 
     def destroy
         event = Event.find(params[:id])
         event.destroy
     end
-# MAKE THE EVENT ACTIONS CREATE AND DESTROY ACCESSIBLE ONLY TO ADMINS
+# MAKE THE EVENT ACTIONS CREATE AND DESTROY ACCESSIBLE ONLY TO ADMINS FROM APPLICATION CONTROLLER
 
     private
 
