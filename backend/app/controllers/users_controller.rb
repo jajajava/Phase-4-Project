@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    skip_before_action :authorized, only: [:create]
+
+
     def index
         render json: User.all, status: :ok
     end
@@ -12,22 +15,20 @@ class UsersController < ApplicationController
     def create 
         user = User.create!(priv_params)
         @token = encode_token(user_id: user.id)
-        render json: {
-            user: UserSerializer.new(user), 
-            token: @token
-        }, status: :created
+        render json: {user: UserSerializer.new(user), token: @token}, status: :created
     end
 
     def me 
         render json: current_user, status: :ok
     end
-    # WHY does the user get created when I pass through is_admin despite the private params?
 
     def update
         user = User.find(params[:id])
-        user.update!
+        user.update!(priv_params)
         render json: user, status: :ok
     end
+# Might need to do separation of concerns and split up the update for every thing I want to update
+# How do I update the user to admin though? Maybe if I only allow the admin account make that edit in the separated route?
 
     def destroy
         user = User.find(params[:id])
