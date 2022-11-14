@@ -49,12 +49,17 @@ function Intro() {
             <hr></hr>
 
             <div className="intro-footer">
-                <div className="location">
+                <div className="info-container">
                     <h1>Location</h1>
                     <p>1842 Jarvisville Road<br></br>
                     Brooklyn, NY 10458-5126</p>    
                 </div>
-                <div className="contact">
+                <div className="info-container">
+                    <h1>Hours</h1>
+                    <p><span>Mon - Fri</span> : 10am - 6pm</p>
+                    <p><span>Sat - Sun</span> : 9am - 8pm</p>    
+                </div>
+                <div className="info-container">
                     <h1>Contact</h1>
                     <p>718 - 903 - 3998<br></br>
                     ashton@info.com</p>    
