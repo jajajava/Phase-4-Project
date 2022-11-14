@@ -13,10 +13,12 @@
 ActiveRecord::Schema[7.0].define(version: 2022_11_14_170325) do
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.string "date"
-    t.string "time"
+    t.text "date"
+    t.text "start_time"
+    t.text "end_time"
     t.boolean "is_public"
     t.integer "spots_left"
+    t.string "description"
     t.string "recurring_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,7 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_170325) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.integer "age"
     t.boolean "is_admin"
     t.boolean "is_member"
     t.datetime "created_at", null: false

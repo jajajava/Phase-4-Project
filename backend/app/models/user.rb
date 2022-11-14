@@ -6,5 +6,4 @@ class User < ApplicationRecord
 
     validates :username, uniqueness: true, presence: true
     validates :password, length: {minimum: 5}, presence: true
-    validates :age, numericality: {greater_than: 9}, presence: true
 end

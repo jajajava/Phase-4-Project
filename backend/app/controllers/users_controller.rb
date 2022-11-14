@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     private
 
     def priv_params
-        params.permit(:username, :password, :age)
+        params.permit(:username, :password)
     end
 
     def record_invalid (error)

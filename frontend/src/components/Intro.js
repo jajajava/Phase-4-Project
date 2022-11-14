@@ -65,10 +65,10 @@ function Intro() {
                     ashton@info.com</p>    
                 </div>
                 <div className="icons">
-                    <i class='bx bxl-facebook'></i>
-                    <i class='bx bxl-instagram-alt' ></i>
-                    <i class='bx bxl-twitter' ></i>
-                    <i class='bx bxl-linkedin-square' ></i>
+                    <i className='bx bxl-facebook'></i>
+                    <i className='bx bxl-instagram-alt' ></i>
+                    <i className='bx bxl-twitter' ></i>
+                    <i className='bx bxl-linkedin-square' ></i>
                 </div>
             </div>
         </div>
