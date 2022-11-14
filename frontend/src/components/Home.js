@@ -8,7 +8,6 @@ function Home() {
         <>
             <Main />
             <Intro />
-            <Signup />
         </>
     )
 }
