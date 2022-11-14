@@ -1,6 +1,6 @@
-class CreateGardens < ActiveRecord::Migration[7.0]
+class CreateReservations < ActiveRecord::Migration[7.0]
   def change
-    create_table :gardens do |t|
+    create_table :reservations do |t|
       t.integer :user_id
       t.integer :event_id
 

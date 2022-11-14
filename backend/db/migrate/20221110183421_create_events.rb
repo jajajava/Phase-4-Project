@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.string :date
       t.string :time
       t.boolean :is_public
+      t.integer :spots_left
       t.string :recurring_days # If event is not recurring, this will be an empty string
 
       t.timestamps
