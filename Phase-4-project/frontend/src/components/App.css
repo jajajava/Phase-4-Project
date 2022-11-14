@@ -1,0 +1,239 @@
+/* ================= General ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Gallient';
+  src: url(../fonts/Gallient.ttf);
+}
+
+:root{
+  --logo-font: 'Gallient';
+  --main-font: 'Poppins', sans-serif;
+  --container: 40px 50px;
+  --thin: 100;
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+li{
+  list-style: none;
+}
+
+body{
+    background-color: #fcf8f3;
+}
+
+/* ================= Header ================= */
+
+.header{
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  padding: var(--container);
+  z-index: 50;
+  background-color: #fcf8f3;
+}
+
+.header-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+
+.nav-menu{
+  display: flex;
+  column-gap: 55px;
+}
+
+.logo a,
+.user span a,
+.nav-menu li a{
+  color: #000
+}
+
+.logo{
+  font-family: var(--logo-font);
+  font-size: 21px;
+  cursor: pointer;
+  margin-right: 125px;
+}
+
+.nav-menu,
+.user span{
+  font-family: var(--main-font);
+  font-size: 12px;
+  font-weight: var(--regular);
+  cursor: pointer;
+}
+
+/* ================= Home ================= */
+
+.main{
+  width: 100%;
+  height: 100vh;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.main-container span{
+  display: block;
+  width: 200px;
+  height: .5px;
+  background-color: #000;
+}
+
+.hours,
+.main-footer,
+.main-container p{
+  font-family: var(--main-font);
+  font-size: 12px;
+}
+
+.hours p{
+  text-align: right;
+}
+
+.welcome{
+  position: relative;
+}
+
+.welcome h1{
+  font-family: var(--logo-font);
+  font-weight: var(--regular);
+  font-size: 150px;
+}
+
+.welcome p{
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.main-container img{
+  position: absolute;
+  width: 335px;
+  bottom: 0;
+  left: 39%;
+}
+
+.main-footer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/* ================= Intro ================= */
+
+.intro{
+  width: 100%;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.intro-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 190px;
+  margin-top: 160px;
+  position: relative;
+}
+
+.intro-container img{
+  align-self: flex-end;
+}
+
+.text-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27vw;
+}
+
+.text-container p{
+  font-family: var(--main-font);
+  font-weight: var(--regular);
+  font-size: 13px;
+}
+
+.sub-head{
+  font-family: var(--logo-font);
+  font-size: 40px;
+}
+
+.overlap-img{
+  position: absolute;
+  width: 240px;
+  left: 400px;
+  top: 180px;
+}
+
+.book-btn{
+  border: .5px solid #000;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 10px 20px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+hr{
+  margin: 90px 0;
+}
+
+.intro-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.intro-footer h1{
+  font-family: var(--logo-font);
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.intro-footer p{
+  font-family: var(--main-font);
+  font-weight:var(--light);
+  font-size: 14px;
+}
+
+.icons i{
+  font-size: 22px;
+  margin-left: 13px;
+  cursor: pointer;
+}
