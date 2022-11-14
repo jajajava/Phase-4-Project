@@ -66,6 +66,11 @@ body{
   column-gap: 55px;
 }
 
+.user span a,
+.nav-menu li a{
+  color: #000
+}
+
 .logo{
   font-family: var(--logo-font);
   font-size: 21px;
@@ -174,6 +179,12 @@ body{
   flex-direction: column;
   justify-content: space-between;
   width: 27vw;
+}
+
+.text-container p{
+  font-family: var(--main-font);
+  font-weight: var(--regular);
+  font-size: 13px;
 }
 
 .sub-head{
