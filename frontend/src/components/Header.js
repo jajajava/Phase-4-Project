@@ -7,8 +7,8 @@ function Header() {
             <nav className='header-nav'>
                 <ul className='nav-menu'>
                     <li><NavLink to="/" exact>HOME</NavLink></li>
-                    <li>EVENTS</li>
-                    <li>BOOKING</li>
+                    <li>PLANTS</li>
+                    <li><NavLink to="/events" exact>EVENTS</NavLink></li>
                 </ul>
                 <div className='logo'><NavLink to="/" exact>The Ashton Garden</NavLink></div>
                 <div className='user'>
