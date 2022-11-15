@@ -15,9 +15,13 @@ class UsersController < ApplicationController
     end
 
     def update
+        if current_user.is_admin
         user = User.find(params[:id])
-        user.update!(priv_params)
+        user.update!(edit_params)
         render json: user, status: :ok
+        else 
+        render json: {error: "Not authorized"}, status: 401
+        end
     end
 
     def destroy
@@ -31,6 +35,10 @@ class UsersController < ApplicationController
 
     def priv_params
         params.permit(:username, :password, :password_confirmation)
+    end
+
+    def edit_params
+        params.permit(:username, :password, :is_admin, :is_member)
     end
 
     def record_invalid (error)

@@ -21,12 +21,16 @@ function App() {
       }
     })
     .then(res => res.json())
-    .then(res => setCurrentUser(res))
+    .then(res => setCurrentUser(res), setIsSignedIn(true))
     : setIsSignedIn(false)}, [isSignedIn])
     console.log(currentUser)
 
     function handleSignout(){
       localStorage.removeItem('jwt')
+<<<<<<< HEAD
+=======
+      setCurrentUser({})
+>>>>>>> b3d807123a6b5fe3a2f1ac54e4a2b18e698d6b7e
       setIsSignedIn(false)
     }
 
