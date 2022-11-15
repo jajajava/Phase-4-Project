@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <Header currentUser={currentUser} handleSignout={handleSignout}/>
+      <Header currentUser={currentUser} isSignedIn={isSignedIn} handleSignout={handleSignout}/>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
