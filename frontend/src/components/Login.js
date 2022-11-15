@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 function Login({setIsSignedIn, setCurrentUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(false)
 
     const navigate = useNavigate()
 
@@ -38,7 +39,7 @@ function Login({setIsSignedIn, setCurrentUser}) {
                         })
                     } else {
                         localStorage.setItem("jwt", null)
-                        alert("Please try again!")
+                        setError(true)
                     }
                 })
             } else {
@@ -62,9 +63,12 @@ function Login({setIsSignedIn, setCurrentUser}) {
                         <p>Password</p>
                         <input onChange={handlePassword} type="password" placeholder="Enter Password" name="password" />
                     </div>
+                    <ul className='errors'>
+                        {error ? <li>* Username and password do not match or you do not have an account yet</li> : null}
+                    </ul>
                     <div className="link-container">
                         <button type="submit">Sign In</button>
-                        <p>Don't have an account? <span><NavLink to="/signup" exact style={{color: "#000"}}>&nbsp; - Sign Up -</NavLink></span></p>
+                        <p>Don't have an account? <span><NavLink to="/signup" exact="true" style={{color: "#000"}}>&nbsp; - Sign Up -</NavLink></span></p>
                     </div>
                 </form>
             </div>

@@ -87,6 +87,16 @@ body{
   cursor: pointer;
 }
 
+.logout{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.logout i{
+  cursor: pointer;
+}
+
 /* ================= Home ================= */
 
 .main{
@@ -331,6 +341,12 @@ input[type="text"]
 {
     font-family: var(--main-font);
     font-size: 13px;
+}
+
+.errors{
+  font-family: var(--main-font);
+  color: orange;
+  font-size: 11px;
 }
 
 /* ================= Events ================= */
