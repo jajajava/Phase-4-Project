@@ -25,6 +25,11 @@ function App() {
     : setIsSignedIn(false)}, [isSignedIn])
     console.log(currentUser)
 
+    function handleSignout(){
+      localStorage.removeItem('jwt')
+      setCurrentUser({})
+    }
+
   return (
     <>
       <Header currentUser={currentUser} handleSignout={handleSignout}/>
