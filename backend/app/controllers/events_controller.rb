@@ -11,10 +11,8 @@ class EventsController < ApplicationController
         render json: Event.find(params[:id]), status: :ok
     end
 
-
-    
     def create
-        if current_user.is_admin = true
+        if current_user.is_admin
         event = Event.create!(priv_params)
         render json: event, status: :created
         else 
@@ -23,7 +21,7 @@ class EventsController < ApplicationController
     end
 
     def update
-        if current_user.is_admin = true
+        if current_user.is_admin    
         event = Event.find(params[:id])
         event.update!(priv_params)
         render json: event, status: :ok
@@ -33,7 +31,7 @@ class EventsController < ApplicationController
     end
 
     def destroy
-        if current_user.is_admin = true
+        if current_user.is_admin
         event = Event.find(params[:id])
         event.destroy
         render json: "Event deleted", status: 201

@@ -13,21 +13,29 @@ class RequestedEventsController < ApplicationController
     end
 
     def create
+        if !current_user.is_admin
         requested = RequestedEvent.create!(priv_params)
+        render json: requested, status: :created
+        elsif current_user.is_admin
+        render json: {error: "Only non-admins can create event requests"}, status: 401
+        end
     end
 
     def update
-        event = Event.find(params[:id])
-        event.update!(priv_params)
-        render json: event, status: :ok
+        requested = RequestedEvent.find(params[:id])
+        requested.update!(priv_params)
+        render json: requested, status: :ok
     end
 
     def destroy
-        if current_user != {}
-        event = Event.find(params[:id])
-        event.destroy
-        render json: "Event deleted", status: 201
-        else 
+        requestedevent = RequestedEvent.find(params[:id])
+        if current_user.id === requestedevent.user.id
+        requestedevent.destroy
+        render json: "Requested event deleted", status: 201
+        elsif current_user.is_admin
+        requestedevent.destroy
+        render json: "Requested event deleted", status: 201
+        else
         render json: {error: "Not authorized"}, status: 401
         end
     end
@@ -35,7 +43,7 @@ class RequestedEventsController < ApplicationController
     private
 
     def priv_params
-        params.permit(:name, :date, :start_time, :end_time, :is_public, :spots_left, :description)
+        params.permit(:name, :date, :start_time, :end_time, :is_public, :spots_left, :description, :user_id)
     end
 
     def record_invalid (error)
@@ -43,7 +51,7 @@ class RequestedEventsController < ApplicationController
     end
 
     def record_not_found
-        render json: {error: "Event not found"}, status: 404
+        render json: {error: "Requested event not found"}, status: 404
     end
 
 end
