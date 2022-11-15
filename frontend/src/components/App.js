@@ -5,7 +5,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Signup from "./Signup";
 import Login from "./Login";
-import Events from "./Events";
+import Request from "./Request";
 import User from "./User";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
 
     function handleSignout(){
       localStorage.removeItem('jwt')
-      setCurrentUser({})
+      setIsSignedIn(false)
     }
 
   return (
@@ -37,7 +37,7 @@ function App() {
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/login" element={<Login setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
-        <Route exact path="/events" element={<Events />}></Route>
+        <Route exact path="/request" element={<Request />}></Route>
         <Route exact path="/user" element={<User />}></Route>
       </Routes>
     </>
