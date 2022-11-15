@@ -1,0 +1,2 @@
+class RequestedEventsController < ApplicationController
+end
