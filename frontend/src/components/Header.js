@@ -2,7 +2,7 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
-function Header({currentUser, handleSignout}) {
+function Header({currentUser, handleSignout, isSignedIn}) {
     return (
         <header className='header'>
             <nav className='header-nav'>
@@ -13,7 +13,7 @@ function Header({currentUser, handleSignout}) {
                 </ul>
                 <div className='logo'><NavLink to="/" exact="true">The Ashton Garden</NavLink></div>
                 <div className='user'>
-                    {currentUser === {} ? 
+                    {!isSignedIn ? 
                     <div><span><NavLink to="/login" exact="true">LOGIN</NavLink></span> <span>/</span> <span><NavLink to="/signup" exact="true">SIGN UP</NavLink></span> </div> :
                     <div className='logout'><span><NavLink to="/user" exact="true">{`${currentUser.username}`.toUpperCase()}</NavLink></span> <i className='bx bx-log-out' onClick={() => handleSignout()}></i></div>
                     }
