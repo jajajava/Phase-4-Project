@@ -6,6 +6,7 @@ import Home from "./Home";
 import Signup from "./Signup";
 import Login from "./Login";
 import Events from "./Events";
+import User from "./User";
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false)
@@ -24,15 +25,15 @@ function App() {
     : setIsSignedIn(false)}, [isSignedIn])
     console.log(currentUser)
 
-
   return (
     <>
-      <Header />
+      <Header currentUser={currentUser} handleSignout={handleSignout}/>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/login" element={<Login setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/events" element={<Events />}></Route>
+        <Route exact path="/user" element={<User />}></Route>
       </Routes>
     </>
   )

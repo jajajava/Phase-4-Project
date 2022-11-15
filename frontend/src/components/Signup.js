@@ -74,9 +74,14 @@ function Signup({setIsSignedIn, setCurrentUser}) {
                         <p>Confirm Password</p>
                         <input onChange={handlePasswordConfirm} type="password" placeholder="Confirm Password" />
                     </div>
+                    <ul className='errors'>
+                        {errorsList.map(error => {
+                            return <li>* {error}</li>
+                        })}
+                    </ul>
                     <div className="link-container">
                         <button type="submit">Sign Up</button>
-                        <p>Back to <span><NavLink to="/login" exact style={{color: "#000"}}>&nbsp; - Log In -</NavLink></span></p>
+                        <p>Back to <span><NavLink to="/login" exact="true" style={{color: "#000"}}>&nbsp; - Log In -</NavLink></span></p>
                     </div>
                 </form>
             </div>

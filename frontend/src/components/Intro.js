@@ -41,7 +41,7 @@ function Intro() {
                         its National Historic Landmark site; through its comprehensive 
                         education programs in horticulture and plant science; and through 
                         the wide-ranging research programs of the International Plant Science Center.</p>
-                    <button type="butotn" className="book-btn"><NavLink to="/events" style={{color: "#000"}}>BOOK NOW</NavLink></button>
+                    <button type="butotn" className="book-btn"><NavLink to="/events" exact="true" style={{color: "#000"}}>BOOK NOW</NavLink></button>
                     </div>
                 </div>
                 <img src="https://i.postimg.cc/5txhsNpV/3.png" alt="image" />
