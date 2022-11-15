@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-    has_many :gardens
-    has_many :users, through: :gardens
+    has_many :reservations
+    has_many :users, through: :reservations
 end
