@@ -5,7 +5,9 @@ function Signup() {
     return (
         <div className='login'>
             <div className='login-container'>
-                    <img src="https://i.postimg.cc/x1q0YnnB/pexels-deeana-arts-2565222.jpg" alt="image" />
+                <div className="login-img">
+                    <img src="https://i.postimg.cc/wj8NFgKc/3grgregrg4.png" alt="image" />
+                </div>
                 <form>
                     <h1>Sign Up</h1>
                     <div className="user-container">
@@ -17,12 +19,12 @@ function Signup() {
                         <input type="password" placeholder="Enter Password" />
                     </div>
                     <div className="user-container">
-                        <p>Confirme Password</p>
+                        <p>Confirm Password</p>
                         <input type="password" placeholder="Confirm Password" />
                     </div>
                     <div className="link-container">
                         <button type="submit">Sign Up</button>
-                        <p>Back to <span><NavLink to="/login" exact style={{color: "#000"}}>&nbsp; - Log in -</NavLink></span></p>
+                        <p>Back to <span><NavLink to="/login" exact style={{color: "#000"}}>&nbsp; - Log In -</NavLink></span></p>
                     </div>
                 </form>
             </div>
