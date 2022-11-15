@@ -25,7 +25,7 @@ class EventsController < ApplicationController
     def update
         if current_user.is_admin = true
         event = Event.find(params[:id])
-        event.update!(params_edit)
+        event.update!(priv_params)
         render json: event, status: :ok
         else
         render json: {error: "Not authorized"}, status: 401
@@ -47,11 +47,7 @@ class EventsController < ApplicationController
     private
 
     def priv_params
-        params.permit(:name, :date, :time, :is_public, :spots_left, :recurring_days)
-    end
-
-    def params_edit
-        params.permit(:name, :date, :time, :is_public, :spots_left, :recurring_days)
+        params.permit(:name, :date, :start_time, :end_time, :spots_left, :description, :recurring_days)
     end
 
     def record_invalid (error)

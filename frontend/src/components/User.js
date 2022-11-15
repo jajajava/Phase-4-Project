@@ -1,7 +1,10 @@
 import React from 'react';
 
-function User() {
 
+function User() {
 }
 
+
 export default User;
+
+

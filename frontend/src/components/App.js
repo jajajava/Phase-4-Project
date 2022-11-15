@@ -24,10 +24,6 @@ function App() {
     : setIsSignedIn(false)}, [isSignedIn])
     console.log(currentUser)
 
-  function handleSignout(){ 
-    localStorage.removeItem('jwt')
-  }
-
 
   return (
     <>
