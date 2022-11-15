@@ -8,7 +8,7 @@ function Main() {
                 <span></span>
                 <div className="welcome">
                     <h1><i>Welcome</i></h1>
-                    <p>TO THE MOST ELEGENT PLANT WORLD.</p>
+                    <p>TO THE MOST ELEGANT PLANT WORLD.</p>
                 </div>
                 <span></span>
                 <div className="hours">
