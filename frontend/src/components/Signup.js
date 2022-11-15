@@ -7,7 +7,6 @@ function Signup({setIsSignedIn, setCurrentUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirm, setPasswordConfirm] = useState('')
-    const [doMatch, setDoMatch] = useState('')
     const [errorsList, setErrorsList] = useState([])
 
     function handleUsername(e){
@@ -22,48 +21,35 @@ function Signup({setIsSignedIn, setCurrentUser}) {
         setPasswordConfirm(e.target.value)
     }
 
-    useEffect(()=>{
-        if (password === passwordConfirm){
-            setDoMatch(password)
-        } else {
-            console.log("Your passwords don't match!")
-        }
-    }, [passwordConfirm])
-
-
     function handleSubmit(e){
-        e.preventDefault()
-    
-    if (doMatch != ''){
-                    fetch('http://127.0.0.1:3000/users', {
-                        method: "POST",
-                        headers: {
-                            'content-type': "application/json"
-                            },
-                        body: JSON.stringify({
-                            username: username,
-                            password: password
-                        })
+    e.preventDefault()
+            fetch('http://127.0.0.1:3000/users', {
+                method: "POST",
+                headers: {
+                    'content-type': "application/json"
+                    },
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                    password_confirmation: passwordConfirm
+                })
+            })
+            .then(res => {
+                if (res.ok){
+                    res.json().then((data) => {
+                        console.log(data)
+                        localStorage.setItem("jwt", data.token);
+                        setIsSignedIn(true);
+                        setCurrentUser(data.user);
+                        navigate('/')
                     })
-                    .then(res => {
-                        if (res.ok){
-                            res.json().then((data) => {
-                                console.log(data)
-                                localStorage.setItem("jwt", data.token);
-                                setIsSignedIn(true);
-                                setCurrentUser(data.user);
-                                navigate('/')
-                            })
-                        } 
-                        else {
-                            res.json().then(res => setErrorsList(res.error))
-                            errorsList.splice(0, errorsList)
-                        }
-                    })
-    } else {
-        console.log("Your passwords don't match!")
-    }}
-
+                } 
+                else {
+                    res.json().then(res => setErrorsList(res.error))
+                    errorsList.splice(0, errorsList)
+                }
+            })
+        }
     console.log(errorsList)
 
     return (
@@ -74,6 +60,8 @@ function Signup({setIsSignedIn, setCurrentUser}) {
                 </div>
                 <form onSubmit={handleSubmit}>
                     <h1>Sign Up</h1>
+                    
+
                     <div className="user-container">
                         <p>Username</p>
                         <input onChange={handleUsername} type="text" placeholder="Enter Username" />

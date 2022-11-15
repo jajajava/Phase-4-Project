@@ -1,39 +1,29 @@
-class EventsController < ApplicationController
+class RequestedEventsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-    skip_before_action :authorized, only: [:index, :show]
 
     def index
-        render json: Event.all, status: :ok
+        requested = RequestedEvent.all
+        render json: requested, status: :ok
     end
 
     def show
-        render json: Event.find(params[:id]), status: :ok
+        requested = RequestedEvent.find(params[:id])
+        render json: requested, status: :ok
     end
 
-
-    
     def create
-        if current_user.is_admin = true
-        event = Event.create!(priv_params)
-        render json: event, status: :created
-        else 
-        render json: {error: "Not authorized"}, status: 401
-        end
+        requested = RequestedEvent.create!(priv_params)
     end
 
     def update
-        if current_user.is_admin = true
         event = Event.find(params[:id])
         event.update!(priv_params)
         render json: event, status: :ok
-        else
-        render json: {error: "Not authorized"}, status: 401
-        end
     end
 
     def destroy
-        if current_user.is_admin = true
+        if current_user != {}
         event = Event.find(params[:id])
         event.destroy
         render json: "Event deleted", status: 201
@@ -42,12 +32,10 @@ class EventsController < ApplicationController
         end
     end
 
-# MAKE THE EVENT ACTIONS CREATE UPDATE AND DESTROY ACCESSIBLE ONLY TO ADMINS FROM APPLICATION CONTROLLER
-
     private
 
     def priv_params
-        params.permit(:name, :date, :start_time, :end_time, :spots_left, :description, :recurring_days)
+        params.permit(:name, :date, :start_time, :end_time, :is_public, :spots_left, :description)
     end
 
     def record_invalid (error)
@@ -57,4 +45,7 @@ class EventsController < ApplicationController
     def record_not_found
         render json: {error: "Event not found"}, status: 404
     end
+
 end
+
+
