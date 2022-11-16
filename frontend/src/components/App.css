@@ -389,3 +389,125 @@ input[type="time"]
   font-family: var(--main-font);
   color: #999;
 }
+
+/* ================= User ================= */
+
+.user-page{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.users-container{
+  display: flex;
+  align-items: flex-start;
+  column-gap: 140px;
+}
+
+.users-container p{
+  font-family: var(--main-font);
+  font-size: 13px;
+}
+
+.welcome-message h1{
+  font-family: var(--logo-font);
+  font-weight: var(--regular);
+  font-size: 55px;
+}
+
+.time-box{
+  display: flex;
+  column-gap: 20px;
+  justify-content: space-between;
+}
+
+.requests h1,
+.reservations h1{
+  font-family: var(--main-font);
+  font-weight: var(--medium);
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.requests i,
+.reservations i{
+  cursor: pointer;
+}
+
+.description {
+  font-weight: var(--light);
+  opacity: 60%;
+  font-size: 15px;
+}
+
+.time-flex{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.for-margin{
+  margin-bottom: 25px;
+}
+
+/* ================= Events ================= */
+
+.events{
+  width: 100%;
+  padding-top: 180px;
+  padding-bottom: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: grid;
+  gap: 150px;
+  grid-template-columns: 1fr 1fr 1fr
+}
+
+.events-container{
+  display: flex;
+  column-gap: 30px;
+}
+
+.events-img-container{
+
+  overflow: hidden;
+}
+
+.events-img-container img{
+  height: 100%;
+}
+
+.events-info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.events-info-container p{
+  font-family: var(--main-font);
+  font-size: 13px;
+}
+
+.events-info-container h1{
+  font-family: var(--logo-font);
+  font-weight: var(--regular);
+}
+
+.time-info{
+  display: flex;
+  column-gap: 20px;
+}
+
+.events-info-container button{
+  border: .5px solid #000;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 10px 20px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+

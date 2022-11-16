@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import './App.css';
 import { Route, Routes } from "react-router-dom";
 import Header from "./Header";
@@ -7,11 +8,14 @@ import Signup from "./Signup";
 import Login from "./Login";
 import Request from "./Request";
 import User from "./User";
+import Events from "./Events";
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({})
   const token = localStorage.getItem('jwt')
+
+  const navigate = useNavigate();
 
   useEffect(()=> {token !== null? 
     fetch('http://127.0.0.1:3000/me', {
@@ -27,10 +31,9 @@ function App() {
 
     function handleSignout(){
       localStorage.removeItem('jwt')
-
       setCurrentUser({})
-
       setIsSignedIn(false)
+      navigate('/')
     }
 
   return (
@@ -41,7 +44,8 @@ function App() {
         <Route exact path="/signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/login" element={<Login setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/request" element={<Request />}></Route>
-        <Route exact path="/user" element={<User />}></Route>
+        <Route exact path="/user" element={<User currentUser={currentUser} isSignedIn={isSignedIn}/>}></Route>
+        <Route exact path="/events" element={<Events />}></Route>
       </Routes>
     </>
   )

@@ -35,7 +35,7 @@ function Login({setIsSignedIn, setCurrentUser}) {
                         localStorage.setItem("jwt", data.token);
                         setIsSignedIn(true);
                         setCurrentUser(data.user)
-                        navigate('/')
+                        navigate('/user')
                         })
                     } else {
                         localStorage.setItem("jwt", null)
