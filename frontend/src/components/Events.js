@@ -59,7 +59,7 @@ function Events({currentUser}) {
                 )
             })}
             <div className="to-request-container">
-            <NavLink to="/request" exact="true" className="to-request"><p>Request for Private Event</p> <i class='bx bx-right-arrow-alt'></i></NavLink>
+            <NavLink to="/request" exact="true" className="to-request"><p>Request Private Event</p> <i class='bx bx-right-arrow-alt'></i></NavLink>
             </div>        
         </div>
 
