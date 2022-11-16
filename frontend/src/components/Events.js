@@ -31,6 +31,7 @@ function Events({currentUser, isSignedIn}) {
             .then(res => {
                 if(res.ok){
                     alert("Your reservation was submitted!")
+                    navigate('/user')
                     window.location.reload()
                 } else {
                     console.log(res)
