@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :requested_events
-  resources :reservations, only: [:create, :destroy]
+  resources :reservations, only: [:show, :create, :destroy] 
   resources :users, only: [:create, :update, :destroy]
   resources :events
   post "/auth/login", to: "auth#login"

@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 function User({currentUser, isSignedIn}) {
+    const token = localStorage.getItem('jwt')
+
+function handleDeleteReservation(e){
+    fetch(`http://127.0.0.1:3000/reservations/${e}`, {
+        method: "DELETE",
+        headers: {
+            'content-type': "application/json",
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(res => {
+        if(res.ok){
+            window.location.reload()
+        } else {
+            res.json().then(console.log(res))
+        }
+    })
+}
+
+
+function handleDeleteRequest(e){}
 
 console.log(currentUser)
     return (
@@ -16,14 +37,14 @@ console.log(currentUser)
                     <h1>RESERVATIONS</h1>
                     {currentUser.events?.map(event => {
                         return (
-                        <div key="event.id" className='for-margin'>
+                        <div key={event.id} className='for-margin'>
                             <div className='time-box'>
                             <div className='time-flex'>
                                 <p>{event.name}</p>
                                 <p>{event.start_time} - {event.end_time}</p>
                                 <p>{event.date}</p>
                             </div>
-                        <i className='bx bx-x'></i>
+                        <i onClick={()=> {handleDeleteReservation(event.id)}} className='bx bx-x'></i>
                         </div>
                         </div>
                         )
@@ -42,7 +63,7 @@ console.log(currentUser)
                                 <p>{event.start_time} - {event.end_time}</p>
                                 <p>{event.date}</p>
                             </div>
-                            <i className='bx bx-x'></i>
+                            <i onClick={handleDeleteRequest} className='bx bx-x'></i>
                         </div>
                     <p className='description'><i>{event.description}</i></p>
                     </div>
