@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
-function Events({currentUser}) {
+function Events({currentUser, isSignedIn}) {
     const [events, setEvents] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch('http://127.0.0.1:3000/events')
@@ -15,6 +16,7 @@ function Events({currentUser}) {
     console.log(currentUser)
 
     function handleMakeReservation(e){
+    if (isSignedIn){
         fetch(`http://127.0.0.1:3000/reservations`, {
             method: "POST",
             headers: {
@@ -34,7 +36,10 @@ function Events({currentUser}) {
                     console.log(res)
                 }
             })
+    } else {
+        navigate('/login')
     }
+    } 
 
     return (
         <div className="events">
@@ -44,7 +49,7 @@ function Events({currentUser}) {
                 return (
                 <div className="events-container">
                     <div className="events-img-container">
-                        <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png"></img>
+                        <img src={event.image}></img>
                     </div>
 
                     <div className="events-info-container">

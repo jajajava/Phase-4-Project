@@ -45,7 +45,7 @@ class EventsController < ApplicationController
     private
 
     def priv_params
-        params.permit(:name, :date, :start_time, :end_time, :spots_left, :description, :recurring_days)
+        params.permit(:name, :date, :start_time, :end_time, :spots_left, :description, :recurring_days, :image)
     end
 
     def record_invalid (error)
