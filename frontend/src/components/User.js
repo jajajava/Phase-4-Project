@@ -22,7 +22,22 @@ function handleDeleteReservation(e){
 }
 
 
-function handleDeleteRequest(e){}
+function handleDeleteRequest(e){
+    fetch(`http://127.0.0.1:3000/requested_events/${e}`, {
+        method: "DELETE",
+        headers: {
+            'content-type': "application/json",
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(res => {
+        if(res.ok){
+            window.location.reload()
+        } else {
+            res.json().then(console.log(res))
+        }
+    })
+}
 
 console.log(currentUser)
     return (
@@ -63,7 +78,7 @@ console.log(currentUser)
                                 <p>{event.start_time} - {event.end_time}</p>
                                 <p>{event.date}</p>
                             </div>
-                            <i onClick={handleDeleteRequest} className='bx bx-x'></i>
+                            <i onClick={()=> handleDeleteRequest(event.id)} className='bx bx-x'></i>
                         </div>
                     <p className='description'><i>{event.description}</i></p>
                     </div>

@@ -16,7 +16,7 @@ function Events() {
                                 <p>3pm - 6pm</p> <p>11/11/22</p> 
                             </div>
                             <p>description</p>
-                            <button type="button">Reservate</button>
+                            <button type="button">Reserve</button>
                         </div>
                     </div>
                     
@@ -34,7 +34,7 @@ function Events() {
                                 <p>3pm - 6pm</p> <p>11/11/22</p> 
                             </div>
                             <p>description</p>
-                            <button type="button">Reservate</button>
+                            <button type="button">Reserve</button>
                         </div>
                     </div>
                     
@@ -52,7 +52,7 @@ function Events() {
                                 <p>3pm - 6pm</p> <p>11/11/22</p> 
                             </div>
                             <p>description</p>
-                            <button type="button">Reservate</button>
+                            <button type="button">Reserve</button>
                         </div>
                     </div>
                     
@@ -70,7 +70,7 @@ function Events() {
                                 <p>3pm - 6pm</p> <p>11/11/22</p> 
                             </div>
                             <p>description</p>
-                            <button type="button">Reservate</button>
+                            <button type="button">Reserve</button>
                         </div>
                     </div>
                     
@@ -88,7 +88,7 @@ function Events() {
                                 <p>3pm - 6pm</p> <p>11/11/22</p> 
                             </div>
                             <p>description</p>
-                            <button type="button">Reservate</button>
+                            <button type="button">Reserve</button>
                         </div>
                     </div>
                     
