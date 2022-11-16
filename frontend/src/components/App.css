@@ -550,5 +550,28 @@ input[type="time"]
   left: 50px;
 }
 
+/* ================= Plants ================= */
 
+.grid-container2{
+  width: 100%;
+  display: grid;
+  column-gap: 200px;
+  row-gap: 80px;
+  grid-template-columns: 1fr 1fr 1fr
+}
 
+.plant-container h1{
+  font-family: var(--logo-font);
+  font-weight: var(--regular);
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.plant-container p{
+  font-family: var(--main-font);
+  font-size: 11px;
+}
+
+.plant-container img{
+  margin-bottom: 10px;
+}
