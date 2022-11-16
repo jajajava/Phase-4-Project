@@ -71,7 +71,7 @@ function handleDeleteRequest(e){
                     {currentUser.requested_events?.map(event => {
                         return (
                         <div key="event.id" className='for-margin'>
-                            <div  className='time-box'>
+                            <div className='time-box'>
                                 <div className='time-flex'>
                                 <p>{event.name}</p>
                                 <p>{event.start_time} - {event.end_time}</p>

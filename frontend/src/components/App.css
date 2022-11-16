@@ -221,7 +221,7 @@ body{
 }
 
 hr{
-  margin-top: 100px;
+  margin-top: 110px;
   margin-bottom: 40px;
 }
 
@@ -403,7 +403,7 @@ input[type="time"]
 .users-container{
   display: flex;
   align-items: flex-start;
-  column-gap: 140px;
+  column-gap: 100px;
 }
 
 .users-container p{
@@ -445,7 +445,7 @@ input[type="time"]
 .time-flex{
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 330px;
 }
 
 .for-margin{
@@ -462,7 +462,7 @@ input[type="time"]
   padding-right: 50px;
 }
 
-.public{
+.title{
   font-family: var(--logo-font);
   font-weight: var(--regular);
   margin-bottom: 50px;
@@ -526,7 +526,7 @@ input[type="time"]
 }
 
 .to-request-container{
-  padding-top: 70px;
+  padding-top: 80px;
 }
 
 .to-request{

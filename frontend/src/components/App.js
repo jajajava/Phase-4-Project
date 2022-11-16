@@ -9,6 +9,7 @@ import Login from "./Login";
 import Request from "./Request";
 import User from "./User";
 import Events from "./Events";
+import Plants from "./Plants";
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false)
@@ -46,6 +47,7 @@ function App() {
         <Route exact path="/request" element={<Request />}></Route>
         <Route exact path="/user" element={<User currentUser={currentUser} isSignedIn={isSignedIn}/>}></Route>
         <Route exact path="/events" element={<Events currentUser={currentUser}/>}></Route>
+        <Route exact path="/plants" element={<Plants />}></Route>
       </Routes>
     </>
   )
