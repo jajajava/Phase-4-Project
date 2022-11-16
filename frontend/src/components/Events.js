@@ -44,7 +44,7 @@ function Events({currentUser}) {
                 return (
                 <div className="events-container">
                     <div className="events-img-container">
-                        <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png"></img>
+                        <img src={event.image}></img>
                     </div>
 
                     <div className="events-info-container">

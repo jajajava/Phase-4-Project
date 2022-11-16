@@ -17,9 +17,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_181830) do
     t.text "start_time"
     t.text "end_time"
     t.boolean "is_public"
+    t.string "recurring_days"
     t.integer "spots_left"
     t.string "description"
-    t.string "recurring_days"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
