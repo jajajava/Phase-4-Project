@@ -456,12 +456,24 @@ input[type="time"]
 
 .events{
   width: 100%;
-  padding-top: 180px;
+  padding-top: 150px;
   padding-bottom: 40px;
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.public{
+  font-family: var(--logo-font);
+  font-weight: var(--regular);
+  margin-bottom: 50px;
+  font-size: 55px;
+}
+
+.grid-container{
+  width: 100%;
   display: grid;
-  gap: 150px;
+  column-gap: 150px;
+  row-gap: 80px;
   grid-template-columns: 1fr 1fr 1fr
 }
 
@@ -471,12 +483,13 @@ input[type="time"]
 }
 
 .events-img-container{
-
+  height: 200px;
+  width: 145px;
   overflow: hidden;
 }
 
 .events-img-container img{
-  height: 100%;
+ width: 100%;
 }
 
 .events-info-container{
@@ -494,6 +507,7 @@ input[type="time"]
 .events-info-container h1{
   font-family: var(--logo-font);
   font-weight: var(--regular);
+  font-size: 19px;
 }
 
 .time-info{
@@ -508,6 +522,33 @@ input[type="time"]
   background-color: transparent;
   padding: 10px 20px;
   font-size: 15px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
+
+.to-request-container{
+  padding-top: 70px;
+}
+
+.to-request{
+  font-family: var(--main-font);
+  color: #000;
+  font-size: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.to-request i{
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.cc{
+  font-family: var(--main-font);
+  font-size: 12px;
+  position: fixed;
+  bottom: 40px;
+  left: 50px;
+}
+
+
 
