@@ -8,7 +8,7 @@ function Header({currentUser, handleSignout, isSignedIn}) {
             <nav className='header-nav'>
                 <ul className='nav-menu'>
                     <li><NavLink to="/" exact="true">HOME</NavLink></li>
-                    <li>PLANTS</li>
+                    <li><NavLink to="/plants">PLANTS</NavLink></li>
                     <li><NavLink to="/events" exact="true">EVENTS</NavLink></li>
                 </ul>
                 <div className='logo'><NavLink to="/" exact="true">The Ashton Garden</NavLink></div>

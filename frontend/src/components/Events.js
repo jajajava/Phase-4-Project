@@ -38,7 +38,7 @@ function Events({currentUser}) {
 
     return (
         <div className="events">
-            <h1 className="public">Public Events</h1>
+            <h1 className="title">Public Events</h1>
         <div className="grid-container">
             {events.map(event => {
                 return (
