@@ -7,8 +7,13 @@ class ReservationsController < ApplicationController
     end
 
     def create
+        already_exists = current_user.events.find_by(id: params[:event_id])
+        if !already_exists
         reservation = Reservation.create!(priv_params)
         render json: reservation, status: :created
+        else
+        render json: {error: "Your spot is already reserved!"}, status: 422
+        end
     end
 
     def destroy

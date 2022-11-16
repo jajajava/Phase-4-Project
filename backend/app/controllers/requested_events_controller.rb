@@ -2,16 +2,6 @@ class RequestedEventsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-    def index
-        requested = RequestedEvent.all
-        render json: requested, status: :ok
-    end
-
-    def show
-        requested = RequestedEvent.find(params[:id])
-        render json: requested, status: :ok
-    end
-
     def create
         if !current_user.is_admin
         requested = RequestedEvent.create!(priv_params)

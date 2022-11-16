@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Events() {
+function Events({currentUser}) {
     const [events, setEvents] = useState([])
 
     useEffect(() => {
@@ -12,6 +12,29 @@ function Events() {
             setEvents(data);
         })
     }, [])
+    console.log(currentUser)
+
+    function handleMakeReservation(e){
+        fetch(`http://127.0.0.1:3000/reservations`, {
+            method: "POST",
+            headers: {
+                'content-type': "application/json",
+                'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+            },
+            body: JSON.stringify({
+                user_id: currentUser.id,
+                event_id: e
+            })
+        })
+            .then(res => {
+                if(res.ok){
+                    alert("Your reservation was submitted!")
+                    window.location.reload()
+                } else {
+                    console.log(res)
+                }
+            })
+    }
 
     return (
         <div className="events">
@@ -29,7 +52,7 @@ function Events() {
                         <div>
                             <p>{event.start_time} - {event.end_time}</p> 
                             <p>{event.date}</p> 
-                            <button type="button">Reserve</button>
+                            <button onClick={()=> handleMakeReservation(event.id)} type="button">Reserve</button>
                         </div>
                     </div>
                 </div> 

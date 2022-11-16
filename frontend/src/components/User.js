@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
-function User({currentUser, isSignedIn}) {
+function User({currentUser}) {
     const token = localStorage.getItem('jwt')
 
 function handleDeleteReservation(e){
@@ -39,7 +39,6 @@ function handleDeleteRequest(e){
     })
 }
 
-console.log(currentUser)
     return (
         <div className='user-page'>
             <div className='users-container'>

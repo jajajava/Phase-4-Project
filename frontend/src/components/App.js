@@ -45,7 +45,7 @@ function App() {
         <Route exact path="/login" element={<Login setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/request" element={<Request />}></Route>
         <Route exact path="/user" element={<User currentUser={currentUser} isSignedIn={isSignedIn}/>}></Route>
-        <Route exact path="/events" element={<Events />}></Route>
+        <Route exact path="/events" element={<Events currentUser={currentUser}/>}></Route>
       </Routes>
     </>
   )
