@@ -15,7 +15,7 @@ function Main() {
                     <p>TODAY'S HOURS <br></br>
                     10 AM - 6 PM</p>
                 </div>
-                <img src="https://i.postimg.cc/15W7TstZ/Flower.png" alt="image"></img>
+                <img src="https://i.postimg.cc/fbS54Y8k/Flower-1-1.png" alt="image"></img>
             </div>
             <div className="main-footer">
                 <p>©2022</p>

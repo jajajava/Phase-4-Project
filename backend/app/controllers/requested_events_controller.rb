@@ -19,12 +19,13 @@ class RequestedEventsController < ApplicationController
 
     def destroy
         requestedevent = RequestedEvent.find(params[:id])
+        user = requestedevent.user
         if current_user.id === requestedevent.user.id
         requestedevent.destroy
-        render json: "Requested event deleted", status: 201
+        render json: user, status: 201
         elsif current_user.is_admin
         requestedevent.destroy
-        render json: "Requested event deleted", status: 201
+        render json: user, status: 201
         else
         render json: {error: "Not authorized"}, status: 401
         end

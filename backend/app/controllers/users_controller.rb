@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     def destroy
         user = User.find(params[:id])
         user.destroy
-        render json: "User has been deleted!", status: :ok
+        render json: user, status: :ok
     end
 # MAKE THE user ACTIONS CREATE AND DESTROY ACCESSIBLE ONLY TO ADMINS
 

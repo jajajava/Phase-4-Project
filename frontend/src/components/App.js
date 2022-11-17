@@ -53,7 +53,7 @@ function App() {
     <>
       <Header currentUser={currentUser} isSignedIn={isSignedIn} handleSignout={handleSignout}/>
       <Routes>
-        <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/" element={<Home isSignedIn={isSignedIn}/>}></Route>
         <Route exact path="/signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/login" element={<Login setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/request" element={<Request currentUser={currentUser}/>}></Route>

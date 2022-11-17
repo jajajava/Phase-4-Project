@@ -3,11 +3,11 @@ import Main from "./Main";
 import Intro from "./Intro";
 import Signup from "./Signup";
 
-function Home() {
+function Home({isSignedIn}) {
     return (
         <>
             <Main />
-            <Intro />
+            <Intro isSignedIn={isSignedIn}/>
         </>
     )
 }

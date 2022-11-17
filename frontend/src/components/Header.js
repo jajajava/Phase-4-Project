@@ -12,6 +12,7 @@ function Header({currentUser, handleSignout, isSignedIn}) {
                     <li><NavLink to="/" exact="true">HOME</NavLink></li>
                     <li><NavLink to="/plants">PLANTS</NavLink></li>
                     <li><NavLink to="/events" exact="true">EVENTS</NavLink></li>
+                    <li className={isSignedIn ? "show" : "not-show"}><NavLink to="/request" exact="true">REQUEST</NavLink></li>
                 </ul>
                 <div className='logo'><NavLink to="/" exact="true">The Ashton Garden</NavLink></div>
                 <div className='user'>

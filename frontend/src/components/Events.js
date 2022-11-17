@@ -61,11 +61,11 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
                             <p>{event.start_time} - {event.end_time}</p> 
                             <p>{event.date}</p> 
                             {isSignedIn ? checkReserved.includes(event.id) ? 
-                            <button type="button">Reserved</button>
+                            <button type="button" className="reserved-check" ><i className='bx bx-check' ></i></button>
                             :
-                            <button onClick={()=> handleMakeReservation(event.id)} type="button">Reserve</button>
+                            <button className="reserve-button" onClick={()=> handleMakeReservation(event.id)} type="button">Reserve</button>
                             :
-                            <button type="button">Reserve</button>
+                            <NavLink to="/login" exact="true"><button type="button">Reserve</button></NavLink>
                         }
                         </div>
                     </div>
