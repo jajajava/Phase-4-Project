@@ -1,19 +1,20 @@
 class ApplicationController < ActionController::API
-    before_action :authorized
-    @@secret_key = "#{ENV['SECRET_KEY']}"
-
-    def encode_token(payload)
-        JWT.encode(payload, @@secret_key) 
-    end
-
-    def decoded_token
-        header = request.headers['Authorization']
-        if header
-            token = header.split(" ")[1]
-            begin
-                JWT.decode(token, @@secret_key, true, algorithm: 'HS256')
-            rescue JWT::DecodeError
-                nil
+        before_action :authorized
+        @@secret_key = "#{ENV["secret_key"]}"
+        
+        def encode_token(payload)
+            JWT.encode(payload, @@secret_key) 
+        end
+    
+        def decoded_token
+            header = request.headers['Authorization']
+            if header
+                token = header.split(" ")[1]
+                begin
+                    JWT.decode(token, @@secret_key, true, algorithm: 'HS256')
+                rescue JWT::DecodeError
+                    nil
+                end
             end
         end
     end

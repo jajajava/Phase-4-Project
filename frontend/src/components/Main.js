@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function Main() {
+
     return (
         <main className="main">
             <div className="main-container">
