@@ -6,56 +6,56 @@ function Plants() {
             <h1 className="title">Plants</h1>
             <div className="grid-container2">
                 <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
+                    <img src="https://i.postimg.cc/66GzQ2vn/ewcece.png" alt='image'></img>
                     <h1>Amaryllis</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
+                    <p>Amaryllis is the only genus in the subtribe Amaryllidinae. It is a small genus of flowering bulbs, with two species. The better known of the two, Amaryllis belladonna, is a native of the Western Cape region of South Africa.</p>
                 </div>  
 
                 <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
+                    <img src="https://i.postimg.cc/bvsVH6sF/3ggqnofinf.png" alt='image'></img>
+                    <h1>Hydrangea</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
                 </div> 
 
                 <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
+                    <img src="https://i.postimg.cc/4xbXRxPT/efwfweef.png" alt='image'></img>
+                    <h1>Orchid</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
                 </div>      
 
                 <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
+                    <img src="https://i.postimg.cc/x1btXX7W/34rjjfoi4fj4.png" alt='image'></img>
+                    <h1>Foamflower</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
+                </div> 
+
+                <div className='plant-container'>
+                    <img src="https://i.postimg.cc/t4HBwh22/jhweifhewf.png" alt='image'></img>
+                    <h1>Monstera</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
+                </div> 
+
+                <div className='plant-container'>
+                    <img src="https://i.postimg.cc/Z531ybDD/niofenoef.png" alt='image'></img>
+                    <h1>Purple Lilac</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
+                </div> 
+
+                <div className='plant-container'>
+                    <img src="https://i.postimg.cc/C1PF6M0s/mfekepww.png" alt='image'></img>
+                    <h1>Aloe Vera</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
+                </div> 
+
+                <div className='plant-container'>
+                    <img src="https://i.postimg.cc/BQyCf2pd/cecewce.png" alt='image'></img>
+                    <h1>Philodendron</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
                 </div> 
 
                 <div className='plant-container'>
                     <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
-                </div> 
-
-                <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
-                </div> 
-
-                <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
-                </div> 
-
-                <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
-                </div> 
-
-                <div className='plant-container'>
-                    <img src="https://i.postimg.cc/SKGhkdMD/4F34F4.png" alt='image'></img>
-                    <h1>Name</h1>
+                    <h1>Marigold</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut distinctio quasi, similique, impedit autem eos corporis molestias quo minima possimus repellat veritatis ex modi magni quaerat quibusdam, enim voluptate.</p>
                 </div>          
             </div>

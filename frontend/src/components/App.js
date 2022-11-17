@@ -14,6 +14,7 @@ import Plants from "./Plants";
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({})
+  const [checkReserved, setCheckReserved] = useState('')
   const token = localStorage.getItem('jwt')
 
   const navigate = useNavigate();
@@ -26,7 +27,10 @@ function App() {
       }
     })
     .then(res => res.json())
-    .then(res => setCurrentUser(res), setIsSignedIn(true))
+    .then(res => {setCurrentUser(res); 
+      setIsSignedIn(true);
+      setCheckReserved(res.events?.map(event => event.id))
+    })
     : setIsSignedIn(false)}, [isSignedIn])
     console.log(currentUser)
 
@@ -37,6 +41,14 @@ function App() {
       navigate('/')
     }
 
+    function updateReserve(e) {
+  
+      const newArr = [...checkReserved]
+      newArr.push(e)
+      
+      setCheckReserved(newArr)
+    }
+
   return (
     <>
       <Header currentUser={currentUser} isSignedIn={isSignedIn} handleSignout={handleSignout}/>
@@ -45,8 +57,8 @@ function App() {
         <Route exact path="/signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/login" element={<Login setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/request" element={<Request currentUser={currentUser}/>}></Route>
-        <Route exact path="/user" element={<User currentUser={currentUser} isSignedIn={isSignedIn}/>}></Route>
-        <Route exact path="/events" element={<Events currentUser={currentUser} isSignedIn={isSignedIn}/>}></Route>
+        <Route exact path="/user" element={<User currentUser={currentUser} setCurrentUser={setCurrentUser} isSignedIn={isSignedIn} setCheckReserved={setCheckReserved}/>}></Route>
+        <Route exact path="/events" element={<Events checkReserved={checkReserved} updateReserve={updateReserve} currentUser={currentUser} isSignedIn={isSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/plants" element={<Plants />}></Route>
       </Routes>
     </>

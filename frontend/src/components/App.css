@@ -411,6 +411,13 @@ input[type="time"]
   font-size: 13px;
 }
 
+.name-width{
+  width: 130px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
 .welcome-message h1{
   font-family: var(--logo-font);
   font-weight: var(--regular);
@@ -421,6 +428,10 @@ input[type="time"]
   display: flex;
   column-gap: 20px;
   justify-content: space-between;
+}
+
+.reservations{
+  width: 400px;
 }
 
 .requests h1,
@@ -434,6 +445,14 @@ input[type="time"]
 .requests i,
 .reservations i{
   cursor: pointer;
+}
+
+.requests{
+  width: 400px;
+}
+
+.no-events{
+  opacity: 50%;
 }
 
 .description {
@@ -555,7 +574,7 @@ input[type="time"]
 .grid-container2{
   width: 100%;
   display: grid;
-  column-gap: 200px;
+  column-gap: 260px;
   row-gap: 80px;
   grid-template-columns: 1fr 1fr 1fr
 }
