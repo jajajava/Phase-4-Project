@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function User({currentUser}) {
+function User({currentUser, setCurrentUser, setCheckReserved}) {
     const token = localStorage.getItem('jwt')
 
 function handleDeleteReservation(e){
@@ -14,12 +14,18 @@ function handleDeleteReservation(e){
     })
     .then(res => {
         if(res.ok){
-            window.location.reload()
+            // window.location.reload()
+            res.json().then(data => {
+                setCurrentUser(data);
+                setCheckReserved(data.events?.map(event => event.id))
+            })
         } else {
             res.json().then(console.log(res))
         }
     })
 }
+
+console.log(currentUser.requested_events?.length)
 
 
 function handleDeleteRequest(e){
@@ -32,7 +38,7 @@ function handleDeleteRequest(e){
     })
     .then(res => {
         if(res.ok){
-            window.location.reload()
+            res.json().then(data => setCurrentUser(data))
         } else {
             res.json().then(console.log(res))
         }
@@ -49,12 +55,15 @@ function handleDeleteRequest(e){
 
                 <div className='reservations'>
                     <h1>RESERVATIONS</h1>
-                    {currentUser.events?.map(event => {
+                    {currentUser.events?.length === 0 ? 
+                    <p className='no-events'><i>No events reserved.</i></p> 
+                    :
+                    currentUser.events?.map(event => {
                         return (
                         <div key={event.id} className='for-margin'>
                             <div className='time-box'>
                             <div className='time-flex'>
-                                <p>{event.name}</p>
+                                <p className='name-width'>{event.name}</p>
                                 <p>{event.start_time} - {event.end_time}</p>
                                 <p>{event.date}</p>
                             </div>
@@ -62,13 +71,18 @@ function handleDeleteRequest(e){
                         </div>
                         </div>
                         )
-                    })}
+                    })
+                    }
+                    
                     
                 </div>
 
                 <div className='requests'>
                     <h1>REQUESTS</h1>
-                    {currentUser.requested_events?.map(event => {
+                    {currentUser.requested_events?.length === 0 ? 
+                    <p className='no-events'><i>No events requested.</i></p> 
+                    :
+                    currentUser.requested_events?.map(event => {
                         return (
                         <div key="event.id" className='for-margin'>
                             <div className='time-box'>
@@ -83,7 +97,9 @@ function handleDeleteRequest(e){
                     </div>
                     
                         )
-                    })}
+                    })
+                    }
+                
                    
                     
                 </div>

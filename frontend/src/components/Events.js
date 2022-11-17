@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 
-function Events({currentUser, isSignedIn}) {
+function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurrentUser}) {
     const [events, setEvents] = useState([])
     const navigate = useNavigate()
 
@@ -30,11 +30,13 @@ function Events({currentUser, isSignedIn}) {
         })
             .then(res => {
                 if(res.ok){
-                    alert("Your reservation was submitted!")
-                    navigate('/user')
-                    window.location.reload()
-                } else {
+                    // alert("Your reservation was submitted!")
+                    // window.location.reload()
+                    res.json().then(data => setCurrentUser(data))
+                    updateReserve(e)
                     console.log(res)
+                } else {
+
                 }
             })
     } else {
@@ -58,7 +60,13 @@ function Events({currentUser, isSignedIn}) {
                         <div>
                             <p>{event.start_time} - {event.end_time}</p> 
                             <p>{event.date}</p> 
+                            {isSignedIn ? checkReserved.includes(event.id) ? 
+                            <button type="button">Reserved</button>
+                            :
                             <button onClick={()=> handleMakeReservation(event.id)} type="button">Reserve</button>
+                            :
+                            <button type="button">Reserve</button>
+                        }
                         </div>
                     </div>
                 </div> 

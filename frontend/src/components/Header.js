@@ -3,6 +3,8 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 
 function Header({currentUser, handleSignout, isSignedIn}) {
+
+
     return (
         <header className='header'>
             <nav className='header-nav'>
