@@ -29,7 +29,7 @@ function Intro({isSignedIn}) {
                         in South America, the Ashton Garden cares for plants imported from a 
                         myriad of diverse environments. The plants are under supervision of 
                         our research department, which offers visitors regional tours to get 
-                        a detailed lesson on plants from specific regions (ticket and scheduling 
+                        a detailed lesson on plants from specific regions (scheduling 
                         information is available online). </p>
                 </div>
             </div>     
