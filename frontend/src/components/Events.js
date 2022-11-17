@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurrentUser}) {
     const [events, setEvents] = useState([])
@@ -47,7 +48,7 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
     return (
         <div className="events">
             <h1 className="title">Public Events</h1>
-        <div className="grid-container">
+        <motion.div initial={{ y: 10, opacity: 0}} whileInView={{ y: 0, opacity: 1, transition:{duration: 1.5} }} className="grid-container">
             {events.map(event => {
                 return (
                 <div className="events-container">
@@ -75,7 +76,7 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
             <div className="to-request-container">
             <NavLink to="/request" exact="true" className="to-request"><p>Request Private Event</p> <i class='bx bx-right-arrow-alt'></i></NavLink>
             </div>        
-        </div>
+        </motion.div>
 
         <hr></hr>
 
