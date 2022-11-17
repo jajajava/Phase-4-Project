@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
         before_action :authorized
         @@secret_key = "#{ENV["secret_key"]}"
-        puts @@secret_key.upcase
+        
         def encode_token(payload)
             JWT.encode(payload, @@secret_key) 
         end
