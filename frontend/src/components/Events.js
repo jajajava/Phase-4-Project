@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurrentUser}) {
     const [events, setEvents] = useState([])
