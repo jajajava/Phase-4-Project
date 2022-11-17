@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Main() {
     return (
@@ -6,10 +7,10 @@ function Main() {
             <div className="main-container">
                 <p>NEW YORK</p>
                 <span></span>
-                <div className="welcome">
+                <motion.div className="welcome" initial={{ y: 15, opacity: 0}} whileInView={{ y: 0, opacity: 1, transition:{duration: 1} }}>
                     <h1><i>Welcome</i></h1>
                     <p>TO THE MOST ELEGANT PLANT WORLD.</p>
-                </div>
+                </motion.div>
                 <span></span>
                 <div className="hours">
                     <p>TODAY'S HOURS <br></br>
