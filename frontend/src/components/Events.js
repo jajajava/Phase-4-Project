@@ -45,6 +45,14 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
     }
     } 
 
+    function handleToRequest(){
+        if (isSignedIn){
+            navigate('/request')
+        } else {
+            navigate('/login')
+        }
+    }
+
     return (
         <div className="events">
             <h1 className="title">Public Events</h1>
@@ -74,7 +82,7 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
                 )
             })}
             <div className="to-request-container">
-            <NavLink to="/request" exact="true" className="to-request"><p>Request Private Event</p> <i class='bx bx-right-arrow-alt'></i></NavLink>
+            <div onClick={handleToRequest} className="to-request"><p className="to-request">Request Private Event</p> <i class='bx bx-right-arrow-alt'></i></div>
             </div>        
         </motion.div>
 

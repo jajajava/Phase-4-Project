@@ -595,6 +595,11 @@ input[type="time"]
 .to-request i{
   font-size: 18px;
   margin-top: 2px;
+  cursor: pointer;
+}
+
+.to-request p{
+  cursor: pointer;
 }
 
 .cc{
