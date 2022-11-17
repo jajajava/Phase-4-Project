@@ -51,3 +51,4 @@ gem 'jwt', '~> 1.5', '>= 1.5.4'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'figaro'
 
+gem 'figaro'
