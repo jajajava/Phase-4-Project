@@ -51,7 +51,7 @@ function Login({setIsSignedIn, setCurrentUser}) {
         <div className='login'>
             <div className='login-container'>
                 <div className="login-img">
-                    <img src="https://i.postimg.cc/L6VbvkWp/3grgregrg4-1-1.png" alt="image" />
+                    <img src="https://i.postimg.cc/ydwXvq18/3grgregrg4-1-1-1.png" alt="image" />
                 </div>
                 <form onSubmit={handleSubmit}>
                     <h1>Login</h1>

@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 function ThankYou() {
     return (
         <div className="thankyou">
-            <motion.div className="thankyou-container" initial={{ y: 5, opacity: 0}} animate={{ y: 0, opacity: 1, transition:{duration: 1} 
-                    }}>
+            <motion.div className="thankyou-container" initial={{ y: 10, opacity: 0}} whileInView={{ y: 0, opacity: 1, transition:{duration: 1.5} }}>
                 <i class='bx bxs-check-circle'></i>
                 <p className="message">Thank You For Your Request!</p>
                 <p className="small-message">We will get back to you as soon as possible.</p>

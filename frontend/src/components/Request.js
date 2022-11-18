@@ -43,10 +43,10 @@ function Request({currentUser, setCurrentUser}) {
         <div className='login' >
             <div className='login-container' >
                 <div className="login-img">
-                    <img src="https://i.postimg.cc/zBBp58GH/fwff33.png" alt="image" />
+                    <img src="https://i.postimg.cc/4NtZ8p5f/jhffuyf.png" alt="image" />
                 </div>
                 <form onSubmit={handleSubmit} style={{paddingTop: "50px"}}>
-                    <h1>Event</h1>
+                    <h1>Request</h1>
                     <div className="user-container">
                         <p>Name</p>
                         <input onChange={(e)=>setName(e.target.value)} type="text" placeholder="Enter event name" />
