@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Request({currentUser}) {
+function Request({currentUser, setCurrentUser}) {
 
     const navigate = useNavigate()
     const [name, setName] = useState('')
@@ -31,8 +31,8 @@ function Request({currentUser}) {
         })
         .then(res=>{
             if (res.ok){
+                res.json().then(data => setCurrentUser(data))
                 navigate('/thank-you')
-                window.location.reload()
             } else {
                 console.log(res)
             }

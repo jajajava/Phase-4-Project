@@ -57,7 +57,7 @@ function App() {
         <Route exact path="/" element={<Home isSignedIn={isSignedIn}/>}></Route>
         <Route exact path="/signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/login" element={<Login setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
-        <Route exact path="/request" element={<Request currentUser={currentUser}/>}></Route>
+        <Route exact path="/request" element={<Request currentUser={currentUser} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/user" element={<User currentUser={currentUser} setCurrentUser={setCurrentUser} isSignedIn={isSignedIn} setCheckReserved={setCheckReserved}/>}></Route>
         <Route exact path="/events" element={<Events checkReserved={checkReserved} updateReserve={updateReserve} currentUser={currentUser} isSignedIn={isSignedIn} setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/plants" element={<Plants />}></Route>

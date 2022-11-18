@@ -5,7 +5,7 @@ class RequestedEventsController < ApplicationController
     def create
         if !current_user.is_admin
         requested = RequestedEvent.create!(priv_params)
-        render json: requested, status: :created
+        render json: current_user, status: :created
         elsif current_user.is_admin
         render json: {error: "Only non-admins can create event requests"}, status: 401
         end
