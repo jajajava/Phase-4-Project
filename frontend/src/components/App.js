@@ -11,6 +11,7 @@ import User from "./User";
 import Events from "./Events";
 import Plants from "./Plants";
 import ThankYou from "./ThankYou";
+import ScrollRestoration from "./ScrollRestoration";
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false)
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <>
+      <ScrollRestoration />
       <Header currentUser={currentUser} isSignedIn={isSignedIn} handleSignout={handleSignout}/>
       <Routes>
         <Route exact path="/" element={<Home isSignedIn={isSignedIn}/>}></Route>
