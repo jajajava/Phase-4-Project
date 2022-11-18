@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"
 
 function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurrentUser}) {
     const [events, setEvents] = useState([])
+    const [sucess, setSucess] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -36,6 +37,8 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
                     res.json().then(data => setCurrentUser(data))
                     updateReserve(e)
                     console.log(res)
+                    setSucess(true)
+                    setTimeout(sucessRemove, 4000)
                 } else {
 
                 }
@@ -51,6 +54,10 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
         } else {
             navigate('/login')
         }
+    }
+
+    function sucessRemove() {
+        setSucess(false)
     }
 
     return (
@@ -74,7 +81,7 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
                             :
                             <button className="reserve-button" onClick={()=> handleMakeReservation(event.id)} type="button">Reserve</button>
                             :
-                            <NavLink to="/login" exact="true"><button type="button">Reserve</button></NavLink>
+                            <NavLink to="/login" exact="true"><button type="button" >Reserve</button></NavLink>
                         }
                         </div>
                     </div>
@@ -86,31 +93,39 @@ function Events({currentUser, isSignedIn, updateReserve, checkReserved, setCurre
             </div>        
         </motion.div>
 
+        <AnimatePresence>
+            {sucess ? <motion.div  initial={{ opacity: 0, y: 5}} animate={{ opacity: 1 , y: 0}} transition={{ ease: "easeOut", duration: .5 }} exit={{ opacity: 0 , y: 5}} className="pop-up">
+                <i className='bx bx-check' ></i>
+                <p>Thanks for your reservation! You are all set!</p>
+            </motion.div> : null}
+        </AnimatePresence>
+        
         <hr></hr>
 
         <div className="intro-footer">
-                <div className="info-container">
-                    <h1>Location</h1>
-                    <p>1842 Jarvisville Road<br></br>
-                    Brooklyn, NY 10458-5126</p>    
-                </div>
-                <div className="info-container">
-                    <h1>Hours</h1>
-                    <p><span>Mon - Fri</span> : 10am - 6pm</p>
-                    <p><span>Sat - Sun</span> : 9am - 8pm</p>    
-                </div>
-                <div className="info-container">
-                    <h1>Contact</h1>
-                    <p>718 - 903 - 3998<br></br>
-                    ashton@info.com</p>    
-                </div>
-                <div className="icons">
-                    <i className='bx bxl-facebook'></i>
-                    <i className='bx bxl-instagram-alt' ></i>
-                    <i className='bx bxl-twitter' ></i>
-                    <i className='bx bxl-linkedin-square' ></i>
-                </div>
+            <div className="info-container">
+                <h1>Location</h1>
+                <p>1842 Jarvisville Road<br></br>
+                Brooklyn, NY 10458-5126</p>    
             </div>
+            <div className="info-container">
+                <h1>Hours</h1>
+                <p><span>Mon - Fri</span> : 10am - 6pm</p>
+                <p><span>Sat - Sun</span> : 9am - 8pm</p>    
+            </div>
+            <div className="info-container">
+                <h1>Contact</h1>
+                <p>718 - 903 - 3998<br></br>
+                ashton@info.com</p>    
+            </div>
+            <div className="icons">
+                <i className='bx bxl-facebook'></i>
+                <i className='bx bxl-instagram-alt' ></i>
+                <i className='bx bxl-twitter' ></i>
+                <i className='bx bxl-linkedin-square' ></i>
+            </div>
+        </div>
+
         </div>
         
     )
