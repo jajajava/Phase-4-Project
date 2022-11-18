@@ -31,7 +31,7 @@ function Request({currentUser}) {
         })
         .then(res=>{
             if (res.ok){
-                navigate('/user')
+                navigate('/thank-you')
                 window.location.reload()
             } else {
                 console.log(res)

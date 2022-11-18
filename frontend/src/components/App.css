@@ -425,6 +425,7 @@ input[type="time"]
   display: flex;
   align-items: flex-start;
   column-gap: 100px;
+  height: 200px;
 }
 
 .users-container p{
@@ -656,4 +657,58 @@ input[type="time"]
 
 .plant-container img{
   margin-bottom: 10px;
+}
+
+/* ================= Thank You ================= */
+
+.thankyou{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.thankyou-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.small-message{
+  font-family: var(--main-font);
+  font-weight: var(--light);
+  font-size: 12px;
+}
+
+.thankyou-container i {
+  color: green;
+  font-size: 60px;
+}
+
+.message{
+  font-family: var(--main-font);
+  font-weight: var(--medium);
+  font-size: 30px;
+}
+
+.continue{
+  font-family: var(--main-font);
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 50px;
+  color: #000;
+}
+
+.continue:hover{
+  opacity: 55%;
+}
+
+.bts-container{
+  margin-top: 50px;
+}
+
+.bts-container button{
+  margin: 0 20px;
+  font-size: 13px;
 }
